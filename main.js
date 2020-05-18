@@ -18,10 +18,10 @@ let myApp = new Vue({
       return this.books.filter(book => {
         return (
           // .match devuelve las coincidencias dentro de una cadena, en este caso busca las
-          // coincidencias de titulo dentro de search.
+          // coincidencias de title dentro de search.
           // toUpperCase me devuelve el valor el vakor de la cadena en mayúsculas.
-          book.titulo.toUpperCase().match(this.search.toUpperCase()) ||
-          book.descripcion.toUpperCase().match(this.search.toUpperCase())
+          book.title.toUpperCase().match(this.search.toUpperCase()) ||
+          book.details.toUpperCase().match(this.search.toUpperCase())
         );
       });
     },

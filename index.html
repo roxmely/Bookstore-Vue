@@ -28,18 +28,18 @@
         />
       </nav>
 
-      <div class="portada">
+      <div class="cover">
         <div class="flip-card" v-for="book in filterBooks">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img :src="book.portada" />
+              <img :src="book.cover" />
             </div>
 
             <div class="flip-card-back bg-yellow">
-              <div class="titulo">
-                <h1>{{book.titulo}}</h1>
+              <div class="title">
+                <h1>{{book.title}}</h1>
               </div>
-              <p>{{book.descripcion}}</p>
+              <p>{{book.details}}</p>
               <div class="info">
                 <div class="button">
                   <button class="btn btn-outline-danger">
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div id="error" class="mensajeError" v-if="books == 0">
-      <p>Ups, vuelve a intentarlo..</p>
+      <p>Ups, try again..</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
