@@ -1,0 +1,59 @@
+body {
+  background-color: yellow !important;
+  font-family: "Tomorrow" !important;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 30px;
+  background-color: black;
+  color: white;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 451px;
+  height: 656px;
+  perspective: 1000px;
+  margin: 0px 10px 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #dfdf7a;
+  color: black;
+  transform: rotateY(180deg);
+}
+.portada {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

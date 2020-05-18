@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <h1>UBIQUM BOOKSTORE</h1>
+
+        <!-- search books -->
+
+        <input
+          v-model="search"
+          class="form-control mr-sm-2 searchInput"
+          type="text"
+          placeholder="Search for books"
+        />
+      </nav>
+
+      <div class="portada">
+        <div class="flip-card" v-for="book in filterBooks">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img :src="book.portada" />
+            </div>
+
+            <div class="flip-card-back bg-yellow">
+              <div class="titulo">
+                <h1>{{book.titulo}}</h1>
+              </div>
+              <p>{{book.descripcion}}</p>
+              <div class="info">
+                <div class="button">
+                  <button class="btn btn-outline-danger">
+                    <a
+                      class="text-white"
+                      v-bind:href="book.detalle"
+                      data-fancybox="images"
+                      >More Info</a
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="error" class="mensajeError" v-if="books == 0">
+      <p>Ups, vuelve a intentarlo..</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
