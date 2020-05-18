@@ -57,3 +57,8 @@ nav {
   flex-flow: row wrap;
   justify-content: center;
 }
+.cover {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+}
